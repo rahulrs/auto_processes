@@ -1,0 +1,2 @@
+Use this file to mount NFS from a linux kernel on any node
+Change the name of the file to '.config' and copy to the linux compilation directory

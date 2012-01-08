@@ -1,0 +1,17 @@
+
+
+##############################################
+####         Aurora Constraints           ####
+##############################################
+
+#Set stepping configuration for CES4
+CONFIG STEPPING = "SCD1";
+
+##Net bref_p LOC AP3 (Positive) or AP4 (Negative)
+NET ref_clk_right_p_pin LOC = AP3;
+NET ref_clk_right_n_pin LOC = AP4;
+
+INST gt11clk_buf_0/gt11clk_buf_0/GT11CLK_MGT_RIGHT LOC = GT11CLK_X1Y1; 
+INST gt11clk_buf_0/gt11clk_buf_0/GT11CLK_MGT_RIGHT SYNCLK1OUTEN = ENABLE;
+INST gt11clk_buf_0/gt11clk_buf_0/GT11CLK_MGT_RIGHT SYNCLK2OUTEN = DISABLE;
+

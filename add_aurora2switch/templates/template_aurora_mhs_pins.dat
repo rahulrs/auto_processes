@@ -1,0 +1,6 @@
+# aurora_link_layer_$NUM
+ PORT aurora_link_layer_$NUM_rxp_pin = aurora_link_layer_$NUM_rxp, DIR = I
+ PORT aurora_link_layer_$NUM_rxn_pin = aurora_link_layer_$NUM_rxn, DIR = I
+ PORT aurora_link_layer_$NUM_txp_pin = aurora_link_layer_$NUM_txp, DIR = O
+ PORT aurora_link_layer_$NUM_txn_pin = aurora_link_layer_$NUM_txn, DIR = O
+

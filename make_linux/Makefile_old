@@ -1,0 +1,77 @@
+# Automated Linux compile generator... Start it and go for some soccer ;-)
+# Author: Rahul 
+##########################################################################
+#
+# SPEND SOME TIME AND CHECK THE PROJECT SETTINGS
+#
+# Uses the XPS project and Linux compilation to create the ace file
+# Create this tree
+# |--linux-2.6-xlnx => Copy from ~/storage
+# |--xps_project => Create the linux worthy xps project
+# |--mkrootfs => Create it empty... the makefile will do the dirty work
+# |--ace => Leave it empty
+#
+# Use the above names or prepare to cry
+# For best results run in a SCREEN command window
+#
+
+# XPS project path - enter here or modify
+PROJECT = $(shell pwd)
+
+# XPS project name
+XPS =  $(PROJECT)/xps_project
+XPS_LIB = ppc405_0/libsrc/linux_2_6_v1_01_c/linux/arch/ppc/platforms/4xx/xparameters
+
+# Linux paths here
+LINUX = $(PROJECT)/linux-2.6-xlnx
+LINUX_XPAR = arch/ppc/platforms/4xx/xparameters
+IMAGE = arch/ppc/boot/images
+
+# Board settings here - change ace file name if needed
+ACE = hw_linux_nfs.ace
+BOARD = ml410
+ARCH = ppc
+TRIPLET = powerpc-405-linux-gnu-
+
+all:
+	make ramdisk
+	cd $(XPS); make -f system.make libs
+	cp $(XPS)/$(XPS_LIB)/xparameters_ml40x.h $(LINUX)/$(LINUX_XPAR)/xparameters_ml403.h
+	cp $(XPS)/$(XPS_LIB)/xparameters_ml40x.h $(LINUX)/$(LINUX_XPAR)/xparameters_ml41x.h
+	cp $(PROJECT)/mkrootfs/ramdisk.image.gz $(LINUX)/$(IMAGE)/.	
+	cd $(LINUX); make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET) ml403_defconfig
+	cp /home/rsharm14/auto_processes/nfs_mount_config_linux/linux_config_nfs $(LINUX)/.config
+	cd $(XPS); make -f system.make init_bram
+	cd $(LINUX); make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET)
+	cd $(LINUX); make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET) zImage
+	rm -rf ace/*
+	cp $(XPS)/implementation/download.bit $(PROJECT)/ace
+	cp $(LINUX)/$(IMAGE)/zImage.elf $(PROJECT)/ace
+	cd ace; xmd -tcl /opt/xilinx/10.1/EDK/data/xmd/genace.tcl -jprog -hw download.bit -elf zImage.elf -ace $(ACE) -board $(BOARD)
+	chmod 777 ace/$(ACE)
+	md5sum ace/$(ACE)
+	@echo "************* Done !! ***************"
+
+ace:	
+	rm -rf ace/*
+	cp $(XPS)/implementation/download.bit $(PROJECT)/ace
+	cp $(LINUX)/$(IMAGE)/zImage.elf $(PROJECT)/ace
+	cd ace; xmd -tcl /opt/xilinx/10.1/EDK/data/xmd/genace.tcl -jprog -hw download.bit -elf zImage.elf -ace $(ACE) -board $(BOARD)
+	chmod 777 ace/$(ACE)
+	md5sum ace/$(ACE)
+	@echo "************* Done !! ***************"
+
+ramdisk:
+	rm -rf mkrootfs/*
+	cp -r /home/rsharm14/storage/mkrootfs_tools/* ./mkrootfs
+	cd mkrootfs; tar xjvf *.bz2; tar xzvf *.gz; rm *.tar.*; . mkfhs.sh; cd busybox*;cp ../busybox_config .config; \
+		make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET) defconfig; \
+	 	make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET);  make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET) install; cd ..; \
+		cp My.makefile ./inetutils*; cd inetutils*; make -f My.makefile; cd ..; sh mkext2.sh
+
+clean:
+	cd $(LINUX); make ARCH=$(ARCH) CROSS_COMPILE=$(TRIPLET) clean
+	cd $(XPS); make -f system.make clean
+	rm -rf mkrootfs/*
+	rm -rf ace/*
+

@@ -1,0 +1,4 @@
+      router_clk         => router_clk,
+      router_rst         => router_rst,     
+      ll_rx_port         => ll_rx_port,
+      ll_tx_port         => ll_tx_port,

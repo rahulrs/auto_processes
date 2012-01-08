@@ -1,0 +1,8 @@
+-batch 
+-create test_core 
+-ver 1.00.a 
+-dir "/home/rsharm14/repository/auto_processes/add_ll_to_pcore/test/MyProcessorIPLib" 
+-lang vhdl 
+-bus plbv46 s 
+-reg 1 
+-xps 

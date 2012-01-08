@@ -1,0 +1,9 @@
+-jprog
+-ace system.ace
+-hw ../implementation/download.bit
+-board ml410
+-target ppc_hw
+-debugdevice devicenr 1 cpunr 1
+-elf ../app0/executable.elf
+-debugdevice devicenr 1 cpunr 2
+-elf ../app1/executable.elf

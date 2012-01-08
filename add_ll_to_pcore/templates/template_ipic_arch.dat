@@ -1,0 +1,12 @@
+-- Split ll_type into std_logic & std_logic_vector
+ll_rx.sof_n      <= ll_rx_sof_n;
+ll_rx.eof_n      <= ll_rx_eof_n;
+ll_rx_dst_rdy_n  <= ll_rx.dst_rdy_n;
+ll_rx.src_rdy_n  <= ll_rx_src_rdy_n;
+ll_rx.data       <= ll_rx_data;  
+ll_tx_sof_n      <= ll_tx.sof_n;
+ll_tx_eof_n      <= ll_tx.eof_n;
+ll_tx.dst_rdy_n  <= ll_tx_dst_rdy_n;
+ll_tx_src_rdy_n  <= ll_tx.src_rdy_n;
+ll_tx_data       <= ll_tx.data;
+

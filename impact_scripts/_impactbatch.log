@@ -1,0 +1,22 @@
+iMPACT Version: Jun 20 2011 20:55:45
+
+iMPACT log file Started on Mon Dec 19 13:17:10 2011
+
+Preference Table
+Name                 Setting             
+StartupClock         Auto_Correction     
+AutoSignature        False               
+KeepSVF              False               
+ConcurrentMode       False               
+UseHighz             False               
+ConfigOnFailure      Stop                
+UserLevel            Novice              
+MessageLevel         Detailed            
+svfUseTime           false               
+SpiByteSwap          Auto_Correction     
+AutoInfer            false               
+SvfPlayDisplayComments false               
+Releasing all cable semaphores. Please wait.
+Done.
+Releasing all cable semaphores. Please wait.
+Done.

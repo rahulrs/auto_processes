@@ -1,0 +1,6 @@
+ACE = system.ace
+
+SLOT = 3
+
+NODE = n00 n01
+

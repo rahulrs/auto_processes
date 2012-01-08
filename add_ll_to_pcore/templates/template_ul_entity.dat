@@ -1,0 +1,3 @@
+-- Locallink ports
+ll_rx   : inout ll_type;
+ll_tx   : inout ll_type;

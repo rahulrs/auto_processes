@@ -1,0 +1,12 @@
+## Port $NUM
+PORT ll_$NUM_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK$NUM, VEC = [31:0]    
+PORT ll_$NUM_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK$NUM     
+PORT ll_$NUM_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK$NUM     
+PORT ll_$NUM_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK$NUM     
+PORT ll_$NUM_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK$NUM, INITIALVAL = VCC
+PORT ll_$NUM_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK$NUM, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_$NUM_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK$NUM, INITIALVAL = VCC   
+PORT ll_$NUM_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK$NUM, INITIALVAL = VCC   
+PORT ll_$NUM_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK$NUM, INITIALVAL = VCC   
+PORT ll_$NUM_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK$NUM
+

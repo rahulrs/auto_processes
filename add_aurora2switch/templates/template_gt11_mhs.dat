@@ -1,0 +1,11 @@
+# ###################################################################
+# MGT Clock Buffer
+# ###################################################################
+BEGIN gt11clk_buf
+ PARAMETER INSTANCE = gt11clk_buf_0
+ PARAMETER HW_VER = 1.00.a
+ PORT REF_CLK1_RIGHT_P = ref_clk_right_p
+ PORT REF_CLK1_RIGHT_N = ref_clk_right_n
+ PORT REF_CLK1_RIGHT_O = ref_clk_right_o
+END
+

@@ -1,0 +1,7 @@
+--VCS MX setup file for ASIC
+--Mapping default work directory
+WORK > DEFAULT
+DEFAULT : ./work
+
+--Simulation variables
+TIMEBASE = ps

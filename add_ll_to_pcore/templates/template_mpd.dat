@@ -1,0 +1,16 @@
+# TX/RX PORT 
+BUS_INTERFACE BUS = LL_TX_PORT, BUS_STD = XIL_LL_DMA, BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = LL_RX_PORT, BUS_STD = XIL_LL_DMA, BUS_TYPE = TARGET
+
+## Port on locallink
+PORT ll_tx_data      = LL_Tx_Data,     DIR = O, BUS = LL_TX_PORT, VEC = [31:0]    
+PORT ll_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = LL_TX_PORT     
+PORT ll_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = LL_TX_PORT     
+PORT ll_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = LL_TX_PORT     
+PORT ll_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = LL_TX_PORT, INITIALVAL = VCC
+PORT ll_rx_data      = LL_Tx_Data,     DIR = I, BUS = LL_RX_PORT, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = LL_RX_PORT, INITIALVAL = VCC   
+PORT ll_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = LL_RX_PORT, INITIALVAL = VCC   
+PORT ll_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = LL_RX_PORT, INITIALVAL = VCC   
+PORT ll_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = LL_RX_PORT
+

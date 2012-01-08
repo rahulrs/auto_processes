@@ -1,0 +1,20 @@
+Convert a pcore to switch python script
+=======================================
+Author : Rahul
+
+*** WARNING: Slightly buggy BETA code, also missing sanity checks ***
+
+- The sole puspose of this script is to create a switch with local
+  link ports.
+- To use this:
+  - First create a pcore with 1 slave register (it is important that
+    only 1 slave register exists in the pcore)
+  - Copy or sym-link the pcore2switch.py file to the
+    pcores/<target_pcore> directory
+  - Run the python script as:
+    python pcore2switch.py 
+    In order to configure airen_common.vhd, a few prompts will be made
+    to the user.
+- Check the VHDL, MPD and PAO files.
+
+

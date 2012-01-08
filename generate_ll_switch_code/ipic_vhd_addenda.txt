@@ -1,0 +1,284 @@
+-- Add the following lines before the PLB signal declarations inside entity
+
+-- port 0
+ll_0_tx_sof_n         : out std_logic;
+ll_0_tx_eof_n         : out std_logic;
+ll_0_tx_src_rdy_n     : out std_logic;
+ll_0_tx_dst_rdy_n     : in  std_logic;
+ll_0_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_0_rx_sof_n         : in  std_logic;
+ll_0_rx_eof_n         : in  std_logic;
+ll_0_rx_src_rdy_n     : in  std_logic;
+ll_0_rx_dst_rdy_n     : out std_logic;
+ll_0_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 1
+ll_1_tx_sof_n         : out std_logic;
+ll_1_tx_eof_n         : out std_logic;
+ll_1_tx_src_rdy_n     : out std_logic;
+ll_1_tx_dst_rdy_n     : in  std_logic;
+ll_1_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_1_rx_sof_n         : in  std_logic;
+ll_1_rx_eof_n         : in  std_logic;
+ll_1_rx_src_rdy_n     : in  std_logic;
+ll_1_rx_dst_rdy_n     : out std_logic;
+ll_1_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 2
+ll_2_tx_sof_n         : out std_logic;
+ll_2_tx_eof_n         : out std_logic;
+ll_2_tx_src_rdy_n     : out std_logic;
+ll_2_tx_dst_rdy_n     : in  std_logic;
+ll_2_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_2_rx_sof_n         : in  std_logic;
+ll_2_rx_eof_n         : in  std_logic;
+ll_2_rx_src_rdy_n     : in  std_logic;
+ll_2_rx_dst_rdy_n     : out std_logic;
+ll_2_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 3
+ll_3_tx_sof_n         : out std_logic;
+ll_3_tx_eof_n         : out std_logic;
+ll_3_tx_src_rdy_n     : out std_logic;
+ll_3_tx_dst_rdy_n     : in  std_logic;
+ll_3_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_3_rx_sof_n         : in  std_logic;
+ll_3_rx_eof_n         : in  std_logic;
+ll_3_rx_src_rdy_n     : in  std_logic;
+ll_3_rx_dst_rdy_n     : out std_logic;
+ll_3_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 4
+ll_4_tx_sof_n         : out std_logic;
+ll_4_tx_eof_n         : out std_logic;
+ll_4_tx_src_rdy_n     : out std_logic;
+ll_4_tx_dst_rdy_n     : in  std_logic;
+ll_4_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_4_rx_sof_n         : in  std_logic;
+ll_4_rx_eof_n         : in  std_logic;
+ll_4_rx_src_rdy_n     : in  std_logic;
+ll_4_rx_dst_rdy_n     : out std_logic;
+ll_4_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 5
+ll_5_tx_sof_n         : out std_logic;
+ll_5_tx_eof_n         : out std_logic;
+ll_5_tx_src_rdy_n     : out std_logic;
+ll_5_tx_dst_rdy_n     : in  std_logic;
+ll_5_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_5_rx_sof_n         : in  std_logic;
+ll_5_rx_eof_n         : in  std_logic;
+ll_5_rx_src_rdy_n     : in  std_logic;
+ll_5_rx_dst_rdy_n     : out std_logic;
+ll_5_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 6
+ll_6_tx_sof_n         : out std_logic;
+ll_6_tx_eof_n         : out std_logic;
+ll_6_tx_src_rdy_n     : out std_logic;
+ll_6_tx_dst_rdy_n     : in  std_logic;
+ll_6_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_6_rx_sof_n         : in  std_logic;
+ll_6_rx_eof_n         : in  std_logic;
+ll_6_rx_src_rdy_n     : in  std_logic;
+ll_6_rx_dst_rdy_n     : out std_logic;
+ll_6_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 7
+ll_7_tx_sof_n         : out std_logic;
+ll_7_tx_eof_n         : out std_logic;
+ll_7_tx_src_rdy_n     : out std_logic;
+ll_7_tx_dst_rdy_n     : in  std_logic;
+ll_7_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_7_rx_sof_n         : in  std_logic;
+ll_7_rx_eof_n         : in  std_logic;
+ll_7_rx_src_rdy_n     : in  std_logic;
+ll_7_rx_dst_rdy_n     : out std_logic;
+ll_7_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 8
+ll_8_tx_sof_n         : out std_logic;
+ll_8_tx_eof_n         : out std_logic;
+ll_8_tx_src_rdy_n     : out std_logic;
+ll_8_tx_dst_rdy_n     : in  std_logic;
+ll_8_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_8_rx_sof_n         : in  std_logic;
+ll_8_rx_eof_n         : in  std_logic;
+ll_8_rx_src_rdy_n     : in  std_logic;
+ll_8_rx_dst_rdy_n     : out std_logic;
+ll_8_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 9
+ll_9_tx_sof_n         : out std_logic;
+ll_9_tx_eof_n         : out std_logic;
+ll_9_tx_src_rdy_n     : out std_logic;
+ll_9_tx_dst_rdy_n     : in  std_logic;
+ll_9_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_9_rx_sof_n         : in  std_logic;
+ll_9_rx_eof_n         : in  std_logic;
+ll_9_rx_src_rdy_n     : in  std_logic;
+ll_9_rx_dst_rdy_n     : out std_logic;
+ll_9_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 10
+ll_10_tx_sof_n         : out std_logic;
+ll_10_tx_eof_n         : out std_logic;
+ll_10_tx_src_rdy_n     : out std_logic;
+ll_10_tx_dst_rdy_n     : in  std_logic;
+ll_10_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_10_rx_sof_n         : in  std_logic;
+ll_10_rx_eof_n         : in  std_logic;
+ll_10_rx_src_rdy_n     : in  std_logic;
+ll_10_rx_dst_rdy_n     : out std_logic;
+ll_10_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+-- port 11
+ll_11_tx_sof_n         : out std_logic;
+ll_11_tx_eof_n         : out std_logic;
+ll_11_tx_src_rdy_n     : out std_logic;
+ll_11_tx_dst_rdy_n     : in  std_logic;
+ll_11_tx_data          : out std_logic_vector(DATA_WIDTH-1 downto 0);
+ll_11_rx_sof_n         : in  std_logic;
+ll_11_rx_eof_n         : in  std_logic;
+ll_11_rx_src_rdy_n     : in  std_logic;
+ll_11_rx_dst_rdy_n     : out std_logic;
+ll_11_rx_data          : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+
+
+------------------------------------------------------------------------
+
+-- Add the following code in the architecture block
+
+-- Port 0 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(0).sof_n     <= ll_0_rx_sof_n;
+ll_rx_port(0).eof_n     <= ll_0_rx_eof_n;
+ll_0_rx_dst_rdy_n       <= ll_rx_port(0).dst_rdy_n;
+ll_rx_port(0).src_rdy_n <= ll_0_rx_src_rdy_n;
+ll_rx_port(0).data      <= ll_0_rx_data;  
+ll_0_tx_sof_n           <= ll_tx_port(0).sof_n;
+ll_0_tx_eof_n           <= ll_tx_port(0).eof_n;
+ll_tx_port(0).dst_rdy_n <= ll_0_tx_dst_rdy_n;
+ll_0_tx_src_rdy_n       <= ll_tx_port(0).src_rdy_n;
+ll_0_tx_data            <= ll_tx_port(0).data;
+
+-- Port 1 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(1).sof_n     <= ll_1_rx_sof_n;
+ll_rx_port(1).eof_n     <= ll_1_rx_eof_n;
+ll_1_rx_dst_rdy_n       <= ll_rx_port(1).dst_rdy_n;
+ll_rx_port(1).src_rdy_n <= ll_1_rx_src_rdy_n;
+ll_rx_port(1).data      <= ll_1_rx_data;  
+ll_1_tx_sof_n           <= ll_tx_port(1).sof_n;
+ll_1_tx_eof_n           <= ll_tx_port(1).eof_n;
+ll_tx_port(1).dst_rdy_n <= ll_1_tx_dst_rdy_n;
+ll_1_tx_src_rdy_n       <= ll_tx_port(1).src_rdy_n;
+ll_1_tx_data            <= ll_tx_port(1).data;
+
+-- Port 2 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(2).sof_n     <= ll_2_rx_sof_n;
+ll_rx_port(2).eof_n     <= ll_2_rx_eof_n;
+ll_2_rx_dst_rdy_n       <= ll_rx_port(2).dst_rdy_n;
+ll_rx_port(2).src_rdy_n <= ll_2_rx_src_rdy_n;
+ll_rx_port(2).data      <= ll_2_rx_data;  
+ll_2_tx_sof_n           <= ll_tx_port(2).sof_n;
+ll_2_tx_eof_n           <= ll_tx_port(2).eof_n;
+ll_tx_port(2).dst_rdy_n <= ll_2_tx_dst_rdy_n;
+ll_2_tx_src_rdy_n       <= ll_tx_port(2).src_rdy_n;
+ll_2_tx_data            <= ll_tx_port(2).data;
+
+-- Port 3 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(3).sof_n     <= ll_3_rx_sof_n;
+ll_rx_port(3).eof_n     <= ll_3_rx_eof_n;
+ll_3_rx_dst_rdy_n       <= ll_rx_port(3).dst_rdy_n;
+ll_rx_port(3).src_rdy_n <= ll_3_rx_src_rdy_n;
+ll_rx_port(3).data      <= ll_3_rx_data;  
+ll_3_tx_sof_n           <= ll_tx_port(3).sof_n;
+ll_3_tx_eof_n           <= ll_tx_port(3).eof_n;
+ll_tx_port(3).dst_rdy_n <= ll_3_tx_dst_rdy_n;
+ll_3_tx_src_rdy_n       <= ll_tx_port(3).src_rdy_n;
+ll_3_tx_data            <= ll_tx_port(3).data;
+
+-- Port 4 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(4).sof_n     <= ll_4_rx_sof_n;
+ll_rx_port(4).eof_n     <= ll_4_rx_eof_n;
+ll_4_rx_dst_rdy_n       <= ll_rx_port(4).dst_rdy_n;
+ll_rx_port(4).src_rdy_n <= ll_4_rx_src_rdy_n;
+ll_rx_port(4).data      <= ll_4_rx_data;  
+ll_4_tx_sof_n           <= ll_tx_port(4).sof_n;
+ll_4_tx_eof_n           <= ll_tx_port(4).eof_n;
+ll_tx_port(4).dst_rdy_n <= ll_4_tx_dst_rdy_n;
+ll_4_tx_src_rdy_n       <= ll_tx_port(4).src_rdy_n;
+ll_4_tx_data            <= ll_tx_port(4).data;
+
+-- Port 5 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(5).sof_n     <= ll_5_rx_sof_n;
+ll_rx_port(5).eof_n     <= ll_5_rx_eof_n;
+ll_5_rx_dst_rdy_n       <= ll_rx_port(5).dst_rdy_n;
+ll_rx_port(5).src_rdy_n <= ll_5_rx_src_rdy_n;
+ll_rx_port(5).data      <= ll_5_rx_data;  
+ll_5_tx_sof_n           <= ll_tx_port(5).sof_n;
+ll_5_tx_eof_n           <= ll_tx_port(5).eof_n;
+ll_tx_port(5).dst_rdy_n <= ll_5_tx_dst_rdy_n;
+ll_5_tx_src_rdy_n       <= ll_tx_port(5).src_rdy_n;
+ll_5_tx_data            <= ll_tx_port(5).data;
+
+-- Port 6 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(6).sof_n     <= ll_6_rx_sof_n;
+ll_rx_port(6).eof_n     <= ll_6_rx_eof_n;
+ll_6_rx_dst_rdy_n       <= ll_rx_port(6).dst_rdy_n;
+ll_rx_port(6).src_rdy_n <= ll_6_rx_src_rdy_n;
+ll_rx_port(6).data      <= ll_6_rx_data;  
+ll_6_tx_sof_n           <= ll_tx_port(6).sof_n;
+ll_6_tx_eof_n           <= ll_tx_port(6).eof_n;
+ll_tx_port(6).dst_rdy_n <= ll_6_tx_dst_rdy_n;
+ll_6_tx_src_rdy_n       <= ll_tx_port(6).src_rdy_n;
+ll_6_tx_data            <= ll_tx_port(6).data;
+
+-- Port 7 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(7).sof_n     <= ll_7_rx_sof_n;
+ll_rx_port(7).eof_n     <= ll_7_rx_eof_n;
+ll_7_rx_dst_rdy_n       <= ll_rx_port(7).dst_rdy_n;
+ll_rx_port(7).src_rdy_n <= ll_7_rx_src_rdy_n;
+ll_rx_port(7).data      <= ll_7_rx_data;  
+ll_7_tx_sof_n           <= ll_tx_port(7).sof_n;
+ll_7_tx_eof_n           <= ll_tx_port(7).eof_n;
+ll_tx_port(7).dst_rdy_n <= ll_7_tx_dst_rdy_n;
+ll_7_tx_src_rdy_n       <= ll_tx_port(7).src_rdy_n;
+ll_7_tx_data            <= ll_tx_port(7).data;
+
+-- Port 8 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(8).sof_n     <= ll_8_rx_sof_n;
+ll_rx_port(8).eof_n     <= ll_8_rx_eof_n;
+ll_8_rx_dst_rdy_n       <= ll_rx_port(8).dst_rdy_n;
+ll_rx_port(8).src_rdy_n <= ll_8_rx_src_rdy_n;
+ll_rx_port(8).data      <= ll_8_rx_data;  
+ll_8_tx_sof_n           <= ll_tx_port(8).sof_n;
+ll_8_tx_eof_n           <= ll_tx_port(8).eof_n;
+ll_tx_port(8).dst_rdy_n <= ll_8_tx_dst_rdy_n;
+ll_8_tx_src_rdy_n       <= ll_tx_port(8).src_rdy_n;
+ll_8_tx_data            <= ll_tx_port(8).data;
+
+-- Port 9 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(9).sof_n     <= ll_9_rx_sof_n;
+ll_rx_port(9).eof_n     <= ll_9_rx_eof_n;
+ll_9_rx_dst_rdy_n       <= ll_rx_port(9).dst_rdy_n;
+ll_rx_port(9).src_rdy_n <= ll_9_rx_src_rdy_n;
+ll_rx_port(9).data      <= ll_9_rx_data;  
+ll_9_tx_sof_n           <= ll_tx_port(9).sof_n;
+ll_9_tx_eof_n           <= ll_tx_port(9).eof_n;
+ll_tx_port(9).dst_rdy_n <= ll_9_tx_dst_rdy_n;
+ll_9_tx_src_rdy_n       <= ll_tx_port(9).src_rdy_n;
+ll_9_tx_data            <= ll_tx_port(9).data;
+
+-- Port 10 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(10).sof_n     <= ll_10_rx_sof_n;
+ll_rx_port(10).eof_n     <= ll_10_rx_eof_n;
+ll_10_rx_dst_rdy_n       <= ll_rx_port(10).dst_rdy_n;
+ll_rx_port(10).src_rdy_n <= ll_10_rx_src_rdy_n;
+ll_rx_port(10).data      <= ll_10_rx_data;  
+ll_10_tx_sof_n           <= ll_tx_port(10).sof_n;
+ll_10_tx_eof_n           <= ll_tx_port(10).eof_n;
+ll_tx_port(10).dst_rdy_n <= ll_10_tx_dst_rdy_n;
+ll_10_tx_src_rdy_n       <= ll_tx_port(10).src_rdy_n;
+ll_10_tx_data            <= ll_tx_port(10).data;
+
+-- Port 11 Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port(11).sof_n     <= ll_11_rx_sof_n;
+ll_rx_port(11).eof_n     <= ll_11_rx_eof_n;
+ll_11_rx_dst_rdy_n       <= ll_rx_port(11).dst_rdy_n;
+ll_rx_port(11).src_rdy_n <= ll_11_rx_src_rdy_n;
+ll_rx_port(11).data      <= ll_11_rx_data;  
+ll_11_tx_sof_n           <= ll_tx_port(11).sof_n;
+ll_11_tx_eof_n           <= ll_tx_port(11).eof_n;
+ll_tx_port(11).dst_rdy_n <= ll_11_tx_dst_rdy_n;
+ll_11_tx_src_rdy_n       <= ll_tx_port(11).src_rdy_n;
+ll_11_tx_data            <= ll_tx_port(11).data;
+

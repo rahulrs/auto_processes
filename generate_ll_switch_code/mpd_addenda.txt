@@ -1,0 +1,204 @@
+## Add the following lines just below the bus in
+
+# PORT 0
+BUS_INTERFACE BUS = TX_LLINK0, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK0, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 1
+BUS_INTERFACE BUS = TX_LLINK1, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK1, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 2
+BUS_INTERFACE BUS = TX_LLINK2, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK2, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 3
+BUS_INTERFACE BUS = TX_LLINK3, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK3, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 4
+BUS_INTERFACE BUS = TX_LLINK4, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK4, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 5
+BUS_INTERFACE BUS = TX_LLINK5, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK5, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 6
+BUS_INTERFACE BUS = TX_LLINK6, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK6, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 7
+BUS_INTERFACE BUS = TX_LLINK7, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK7, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 8
+BUS_INTERFACE BUS = TX_LLINK8, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK8, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 9
+BUS_INTERFACE BUS = TX_LLINK9, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK9, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 10
+BUS_INTERFACE BUS = TX_LLINK10, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK10, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+# PORT 11
+BUS_INTERFACE BUS = TX_LLINK11, BUS_STD = XIL_LL_DMA. BUS_TYPE = INITIATOR
+BUS_INTERFACE BUS = RX_LLINK11, BUS_STD = XIL_LL_DMA. BUS_TYPE = TARGET
+
+
+
+############################################################################
+
+## Add the following code in the ports declaration
+
+# Router rst and clk
+PORT router_clk = , DIR = I
+PORT router_rst = , DIR = O
+
+## Port 0
+PORT ll_0_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK0, VEC = [31:0]    
+PORT ll_0_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK0     
+PORT ll_0_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK0     
+PORT ll_0_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK0     
+PORT ll_0_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK0, INITIALVAL = VCC
+PORT ll_0_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK0, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_0_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK0, INITIALVAL = VCC   
+PORT ll_0_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK0, INITIALVAL = VCC   
+PORT ll_0_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK0, INITIALVAL = VCC   
+PORT ll_0_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK0
+
+## Port 1
+PORT ll_1_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK1, VEC = [31:0]    
+PORT ll_1_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK1     
+PORT ll_1_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK1     
+PORT ll_1_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK1     
+PORT ll_1_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK1, INITIALVAL = VCC
+PORT ll_1_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK1, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_1_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK1, INITIALVAL = VCC   
+PORT ll_1_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK1, INITIALVAL = VCC   
+PORT ll_1_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK1, INITIALVAL = VCC   
+PORT ll_1_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK1
+
+## Port 2
+PORT ll_2_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK2, VEC = [31:0]    
+PORT ll_2_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK2     
+PORT ll_2_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK2     
+PORT ll_2_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK2     
+PORT ll_2_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK2, INITIALVAL = VCC
+PORT ll_2_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK2, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_2_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK2, INITIALVAL = VCC   
+PORT ll_2_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK2, INITIALVAL = VCC   
+PORT ll_2_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK2, INITIALVAL = VCC   
+PORT ll_2_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK2
+
+## Port 3
+PORT ll_3_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK3, VEC = [31:0]    
+PORT ll_3_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK3     
+PORT ll_3_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK3     
+PORT ll_3_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK3     
+PORT ll_3_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK3, INITIALVAL = VCC
+PORT ll_3_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK3, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_3_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK3, INITIALVAL = VCC   
+PORT ll_3_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK3, INITIALVAL = VCC   
+PORT ll_3_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK3, INITIALVAL = VCC   
+PORT ll_3_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK3
+
+## Port 4
+PORT ll_4_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK4, VEC = [31:0]    
+PORT ll_4_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK4     
+PORT ll_4_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK4     
+PORT ll_4_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK4     
+PORT ll_4_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK4, INITIALVAL = VCC
+PORT ll_4_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK4, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_4_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK4, INITIALVAL = VCC   
+PORT ll_4_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK4, INITIALVAL = VCC   
+PORT ll_4_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK4, INITIALVAL = VCC   
+PORT ll_4_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK4
+
+## Port 5
+PORT ll_5_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK5, VEC = [31:0]    
+PORT ll_5_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK5     
+PORT ll_5_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK5     
+PORT ll_5_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK5     
+PORT ll_5_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK5, INITIALVAL = VCC
+PORT ll_5_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK5, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_5_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK5, INITIALVAL = VCC   
+PORT ll_5_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK5, INITIALVAL = VCC   
+PORT ll_5_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK5, INITIALVAL = VCC   
+PORT ll_5_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK5
+
+## Port 6
+PORT ll_6_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK6, VEC = [31:0]    
+PORT ll_6_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK6     
+PORT ll_6_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK6     
+PORT ll_6_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK6     
+PORT ll_6_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK6, INITIALVAL = VCC
+PORT ll_6_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK6, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_6_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK6, INITIALVAL = VCC   
+PORT ll_6_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK6, INITIALVAL = VCC   
+PORT ll_6_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK6, INITIALVAL = VCC   
+PORT ll_6_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK6
+
+## Port 7
+PORT ll_7_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK7, VEC = [31:0]    
+PORT ll_7_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK7     
+PORT ll_7_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK7     
+PORT ll_7_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK7     
+PORT ll_7_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK7, INITIALVAL = VCC
+PORT ll_7_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK7, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_7_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK7, INITIALVAL = VCC   
+PORT ll_7_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK7, INITIALVAL = VCC   
+PORT ll_7_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK7, INITIALVAL = VCC   
+PORT ll_7_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK7
+
+## Port 8
+PORT ll_8_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK8, VEC = [31:0]    
+PORT ll_8_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK8     
+PORT ll_8_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK8     
+PORT ll_8_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK8     
+PORT ll_8_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK8, INITIALVAL = VCC
+PORT ll_8_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK8, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_8_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK8, INITIALVAL = VCC   
+PORT ll_8_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK8, INITIALVAL = VCC   
+PORT ll_8_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK8, INITIALVAL = VCC   
+PORT ll_8_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK8
+
+## Port 9
+PORT ll_9_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK9, VEC = [31:0]    
+PORT ll_9_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK9     
+PORT ll_9_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK9     
+PORT ll_9_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK9     
+PORT ll_9_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK9, INITIALVAL = VCC
+PORT ll_9_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK9, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_9_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK9, INITIALVAL = VCC   
+PORT ll_9_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK9, INITIALVAL = VCC   
+PORT ll_9_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK9, INITIALVAL = VCC   
+PORT ll_9_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK9
+
+## Port 10
+PORT ll_10_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK10, VEC = [31:0]    
+PORT ll_10_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK10     
+PORT ll_10_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK10     
+PORT ll_10_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK10     
+PORT ll_10_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK10, INITIALVAL = VCC
+PORT ll_10_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK10, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_10_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK10, INITIALVAL = VCC   
+PORT ll_10_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK10, INITIALVAL = VCC   
+PORT ll_10_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK10, INITIALVAL = VCC   
+PORT ll_10_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK10
+
+## Port 11
+PORT ll_11_tx_data      = LL_Tx_Data,     DIR = O, BUS = TX_LLINK11, VEC = [31:0]    
+PORT ll_11_tx_sof_n     = LL_Tx_SOF_n,    DIR = O, BUS = TX_LLINK11     
+PORT ll_11_tx_eof_n     = LL_Tx_EOF_n,    DIR = O, BUS = TX_LLINK11     
+PORT ll_11_tx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = O, BUS = TX_LLINK11     
+PORT ll_11_tx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = I, BUS = TX_LLINK11, INITIALVAL = VCC
+PORT ll_11_rx_data      = LL_Tx_Data,     DIR = I, BUS = RX_LLINK11, INITIALVAL = GND, VEC = [31:0]   
+PORT ll_11_rx_sof_n     = LL_Tx_SOF_n,    DIR = I, BUS = RX_LLINK11, INITIALVAL = VCC   
+PORT ll_11_rx_eof_n     = LL_Tx_EOF_n,    DIR = I, BUS = RX_LLINK11, INITIALVAL = VCC   
+PORT ll_11_rx_src_rdy_n = LL_Tx_SrcRdy_n, DIR = I, BUS = RX_LLINK11, INITIALVAL = VCC   
+PORT ll_11_rx_dst_rdy_n = LL_Tx_DstRdy_n, DIR = O, BUS = RX_LLINK11
+

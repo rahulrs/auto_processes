@@ -1,0 +1,11 @@
+-- port $NUM
+ll_$NUM_tx_sof_n         : out std_logic;
+ll_$NUM_tx_eof_n         : out std_logic;
+ll_$NUM_tx_src_rdy_n     : out std_logic;
+ll_$NUM_tx_dst_rdy_n     : in  std_logic;
+ll_$NUM_tx_data          : out std_logic_vector(D_WIDTH-1 downto 0);
+ll_$NUM_rx_sof_n         : in  std_logic;
+ll_$NUM_rx_eof_n         : in  std_logic;
+ll_$NUM_rx_src_rdy_n     : in  std_logic;
+ll_$NUM_rx_dst_rdy_n     : out std_logic;
+ll_$NUM_rx_data          : in  std_logic_vector(D_WIDTH-1 downto 0);

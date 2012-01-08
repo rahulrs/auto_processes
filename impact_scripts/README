@@ -1,0 +1,7 @@
+impact -batch <file>
+
+<file>				Action
+-------------------------------------------------------------
+ml605_warm_reset		Warm reset a board
+jtag_lock_clean 		Clean JTAG lock files [SUDO]
+

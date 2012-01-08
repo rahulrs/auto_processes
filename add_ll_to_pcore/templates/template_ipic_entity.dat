@@ -1,0 +1,11 @@
+-- Locallink ports as std_logic & std_logic_vector
+ll_tx_sof_n         : out std_logic;
+ll_tx_eof_n         : out std_logic;
+ll_tx_src_rdy_n     : out std_logic;
+ll_tx_dst_rdy_n     : in  std_logic;
+ll_tx_data          : out std_logic_vector(D_WIDTH-1 downto 0);
+ll_rx_sof_n         : in  std_logic;
+ll_rx_eof_n         : in  std_logic;
+ll_rx_src_rdy_n     : in  std_logic;
+ll_rx_dst_rdy_n     : out std_logic;
+ll_rx_data          : in  std_logic_vector(D_WIDTH-1 downto 0);

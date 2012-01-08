@@ -1,0 +1,12 @@
+-- Port $NUM Conversion between Local Link Port Type and STD Logic (for MHS)
+ll_rx_port($NUM).sof_n     <= ll_$NUM_rx_sof_n;
+ll_rx_port($NUM).eof_n     <= ll_$NUM_rx_eof_n;
+ll_$NUM_rx_dst_rdy_n       <= ll_rx_port($NUM).dst_rdy_n;
+ll_rx_port($NUM).src_rdy_n <= ll_$NUM_rx_src_rdy_n;
+ll_rx_port($NUM).data      <= ll_$NUM_rx_data;  
+ll_$NUM_tx_sof_n           <= ll_tx_port($NUM).sof_n;
+ll_$NUM_tx_eof_n           <= ll_tx_port($NUM).eof_n;
+ll_tx_port($NUM).dst_rdy_n <= ll_$NUM_tx_dst_rdy_n;
+ll_$NUM_tx_src_rdy_n       <= ll_tx_port($NUM).src_rdy_n;
+ll_$NUM_tx_data            <= ll_tx_port($NUM).data;
+

@@ -1,0 +1,24 @@
+##############################################
+# aurora_$NUM channel
+##############################################
+BEGIN aurora_ll_w_fifo_32b_4Gbps_single
+ PARAMETER INSTANCE = aurora_link_layer_$NUM
+ PARAMETER HW_VER = 1.00.a
+ PARAMETER LANE0_GT11_MODE_P = B
+ PARAMETER LANE0_MGT_ID_P = 1
+ PARAMETER CHIPSCOPE_AURORA = FALSE
+ PARAMETER CHIPSCOPE_TX_FIFO = FALSE
+ PARAMETER CHIPSCOPE_RX_FIFO = FALSE
+ BUS_INTERFACE TX_LLINK0 = AURORA_$NUM_TO_ROUTER
+ BUS_INTERFACE RX_LLINK0 = ROUTER_TO_AURORA_$NUM
+# PORT aurora_ila_ctlr = aurora$NUM_ila
+ PORT REF_CLK1_RIGHT_O = ref_clk_right_o
+ PORT INIT_CLK = init_clk
+ PORT router_rst = sys_bus_reset
+ PORT router_clk = clk_100_0000MHzDCM0
+ PORT rxp = aurora_link_layer_$NUM_rxp
+ PORT rxn = aurora_link_layer_$NUM_rxn
+ PORT txp = aurora_link_layer_$NUM_txp
+ PORT txn = aurora_link_layer_$NUM_txn
+END
+

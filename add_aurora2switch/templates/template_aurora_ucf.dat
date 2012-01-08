@@ -1,0 +1,12 @@
+# X- = 113B = J2
+INST aurora_link_layer_0/aurora_link_layer_0/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y6;
+# X+ = 113A = J6
+INST aurora_link_layer_1/aurora_link_layer_1/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y7;
+# Y- = 110B = J3
+INST aurora_link_layer_2/aurora_link_layer_2/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y2;
+# Y+ = 110A = J7
+INST aurora_link_layer_3/aurora_link_layer_3/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y3;
+# Z- = 110B = J3
+INST aurora_link_layer_4/aurora_link_layer_4/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y4;
+# Z+ = 110A = J7
+INST aurora_link_layer_5/aurora_link_layer_5/aurora_core_i/aurora_v3_inst/aurora_v3_mgt_wrapper_i/MGT0 LOC=GT11_X1Y5;
