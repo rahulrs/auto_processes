@@ -1,0 +1,14 @@
+This is a set of all my beloved scripts that have made my research
+life just that bit simpler.
+
+Most are FPGA, cross-compilation, HDL analysis or building linux
+related.
+
+WARNING: Most of these scripts are extremely ferocious in their
+working and can wipe out your work if you dont take care to back up
+your work. Many are defunct and require cleaning up or revving-up. Any
+mishaps caused by these scripts on your machine are completely your
+own misdoing.
+
+I am not legally liable for any negative effects (loss of data,
+destruction of project) due to running these scripts. So beware.
