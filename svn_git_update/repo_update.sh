@@ -4,45 +4,45 @@
 
 datestamp=`date` 
 echo
-echo "Repository Sync started at" $datestamp > ~/repo_update.log
+echo "Repository Sync started at" $datestamp > ~/update_repo.log
 echo
-echo "==================================================" >> ~/repo_update.log
+echo "==================================================" >> ~/update_repo.log
 
 # Update Lab SVN
-echo "svn up ~/svn/rcc" >> ~/repo_update.log
-svn up ~/svn/rcc >> ~/repo_update.log
-echo "==================================================" >> ~/repo_update.log
-echo "svn up ~/svn/reports" >> ~/repo_update.log
-svn up ~/svn/reports >> ~/repo_update.log
-echo "==================================================" >> ~/repo_update.log
-echo "svn up ~/svn/proposals" >> ~/repo_update.log
-svn up ~/svn/proposals >> ~/repo_update.log
-echo "==================================================" >> ~/repo_update.log
+echo "svn up ~/svn/rcc" >> ~/update_repo.log
+svn up ~/svn/rcc >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
+echo "svn up ~/svn/reports" >> ~/update_repo.log
+svn up ~/svn/reports >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
+echo "svn up ~/svn/proposals" >> ~/update_repo.log
+svn up ~/svn/proposals >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
 cd
 
 # Update Opencores - Amber 
-echo "svn up /home/rsharm14/storage/amber_opencores/" >> ~/repo_update.log
-svn up /home/rsharm14/storage/amber_opencores/ >> ~/repo_update.log
-echo "==================================================" >> ~/repo_update.log
+echo "svn up /home/rsharm14/storage/amber_opencores/" >> ~/update_repo.log
+svn up /home/rsharm14/storage/amber_opencores/ >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
 # Update Opencores - OpenRISC
-echo "svn up /home/rsharm14/storage/openrisc_opencores/" >> ~/repo_update.log
-svn up /home/rsharm14/storage/openrisc_opencores/ >> ~/repo_update.log
-echo "==================================================" >> ~/repo_update.log
+echo "svn up /home/rsharm14/storage/openrisc_opencores/" >> ~/update_repo.log
+svn up /home/rsharm14/storage/openrisc_opencores/ >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
 
 # Update Xilinx GIT repository
 cd ~/repository/sw/xilinx_git
 for dir in *
 do
   cd $dir
-  echo $PWD >> ~/repo_update.log
-  git pull >> ~/repo_update.log
+  echo $PWD >> ~/update_repo.log
+  git pull >> ~/update_repo.log
   cd ..
-  echo "==================================================" >> ~/repo_update.log
+  echo "==================================================" >> ~/update_repo.log
 done
 cd
 echo
 datestamp=`date` 
-echo "Repository Sync completed at" $datestamp >> ~/repo_update.log
+echo "Repository Sync completed at" $datestamp >> ~/update_repo.log
 echo 
 
 # A Second cron job on 'ray' mails the file daily at 8 am to rahuluncc@gmail.com
