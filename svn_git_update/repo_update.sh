@@ -45,6 +45,13 @@ datestamp=`date`
 echo "Repository Sync completed at" $datestamp >> ~/update_repo.log
 echo 
 
+#### Following 2 lines have been disabled for 'freeman' test run ###
 # A Second cron job on 'ray' mails the file daily at 8 am to rahuluncc@gmail.com
 # A Third cron job on 'ray' deletes the log file at 9 am
+
+# Mail test: 6th feb 2012
+cat ~/update_repo.log | mail -s "Auto-update SVN + GIT report" rahuluncc@gmail.com
+
+# Delete log file
+/bin/rm -rf ~/update_repo.log
 
