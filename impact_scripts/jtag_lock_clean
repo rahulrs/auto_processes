@@ -1,4 +1,5 @@
 setMode -bscan
 cleancablelock
+setcable -p auto
 quit
 
