@@ -18,6 +18,9 @@ echo "==================================================" >> ~/update_repo.log
 echo "svn up ~/svn/proposals" >> ~/update_repo.log
 svn up ~/svn/proposals >> ~/update_repo.log
 echo "==================================================" >> ~/update_repo.log
+echo "svn up ~/svn/dbes" >> ~/update_repo.log
+svn up ~/svn/dbes >> ~/update_repo.log
+echo "==================================================" >> ~/update_repo.log
 cd
 
 # Update Opencores - Amber 
