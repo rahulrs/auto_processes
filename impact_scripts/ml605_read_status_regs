@@ -1,0 +1,5 @@
+setmode -bs
+setCable -port usb21
+identify
+ReadStatusRegister -p 2
+checkintegrity

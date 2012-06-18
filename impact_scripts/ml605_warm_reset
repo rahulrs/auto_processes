@@ -4,5 +4,6 @@ identify
 bsdebug -start
 bsdebug -reset
 bsdebug -scanir 111111111111001011
+bsdebug -reset
 bsdebug -stop
 checkintegrity
