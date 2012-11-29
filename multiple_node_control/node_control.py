@@ -72,8 +72,16 @@ def select_slot_and_boot():
         os.system("fsc select " + node + " " + slot)
         os.system("fsc boot " + node)
 
+#######################################################
+# Send HALT command to nodes running linux  
+# def halt_linux():
+#     for node in node_list:
+#        os.system("
         
-################ PROGRAM BEGINS HERE ##################
+
+#######################################################
+#                PROGRAM BEGINS HERE                  #
+#######################################################
 # Check input arguments
 if (len(sys.argv) == 3):
     command = str(sys.argv[1])
@@ -81,6 +89,8 @@ if (len(sys.argv) == 3):
 else:
     print "Usage: python ~/multiple_node_control.py <command> <config_file>\n"
     sys.exit()
+
+
 
 # Parse input file and generate info
 parsed_list = parse_file()

@@ -10,9 +10,6 @@
 # synthesis estimate using 'xst'. It creates a directory by the name             #
 # of 'synthesis_xst' and generates the reports there.                            #
 #                                                                                #
-# Documentation can be found here:                                               #
-# http://docs.google.com/Doc?docid=0ATlAkbQsZdUoZGR0azdnZ2dfNzhrMnJka3BnZg&hl=en #
-#                                                                                #
 # Limitation:                                                                    #
 # - Does not perform a sanity check                                              #
 # - Looks up VHDL files only                                                     #
@@ -37,6 +34,8 @@ else:
         package_name = "xc4vfx60ff1152-11"
     elif board_name == "ml605":
         package_name = "xc6vlx240t-1ff1156"
+    elif board_name == "ml510":
+        package_name = "xc5vfx130t-1ff1738"
     else:
         package_name = "xc4vfx60ff1152-11"
         print "Please check the SCR file for the correct board name as input was not recognized... script will continue assuming ML410 !\r"
@@ -134,7 +133,7 @@ while 1:
         vhdl_string = vhdl_string.replace('\n','')
         prj_file_handle.write('vhdl ' + core_name_w_ver + ' "' + vhdl_string + '"\n')
 
-        
+########################################################################        
 # Generate SCR file - DONE
 print "Generating the SCR file @ "
 print scr_path
@@ -144,7 +143,7 @@ scr_string = "run\n-opt_mode speed\n-netlist_hierarchy as_optimized\n-opt_level 
 scr_file_handle = open(scr_path, "w")
 scr_file_handle.write(scr_string)
 
-
+########################################################################        
 # Generate Makefile - DONE
 print "Generating the Makefile @ "
 print make_path

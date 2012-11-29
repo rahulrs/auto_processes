@@ -12,9 +12,9 @@ import re, os, sys, commands
 
 # Board dictionary
 board_dict = { "ml410":"xc4vfx60ff1152-11",
-               "ml605":"xc6vlx240tff1156-1"
+               "ml605":"xc6vlx240tff1156-1",
+               "ml510":"xc5vfx130t-1ff1738"
                }
-
 
 
 # Input a file containing VHDL modules & top-level VHDL module
@@ -65,7 +65,7 @@ for line in vhdl_lines:
     str_line=str(line).strip()
     # Open each VHDL file and check if wait statements exists, ignore comment lines
     prj_vhdl_string = str(open(str_line).readlines())
-    if int(prj_vhdl_string.find("wait for ")) > -1:
+    if int(prj_vhdl_string.find("wait for never use")) > -1:
         continue
     else:
         prj_file_handle.write('vhdl work "' + present_working_dir + "/" + str_line + '"\n')
@@ -90,7 +90,8 @@ while 1:
         vhdl_temp_line_reading =  vhdl_temp_line_reading.replace('\n','')
         make_file_handle.write("../" + vhdl_temp_line_reading + " ")
         
-make_file_handle.write("\n\n$(COMPONENT).ngc: $(SRC) \n\txst -ifn $(XST_PRJ) -ofn $(XST_SRP)\n\nclean: \n\trm -rf $(COMPONENT).lso $(COMPONENT).ngc $(COMPONENT).ngc_xst.xrpt $(PROJECT).ngr $(XST_SRP) xlnx_auto_0.ise xlnx_auto_0_xdb $(COMPONENT)_vhdl.prj xst *~")
+#make_file_handle.write("\n\n$(COMPONENT).ngc: clean\n\txst -ifn $(XST_PRJ) -ofn $(XST_SRP)\n\nclean: \n\trm -rf $(COMPONENT).lso $(COMPONENT).ngc $(COMPONENT).ngc_xst.xrpt $(PROJECT).ngr $(XST_SRP) xlnx_auto_0.ise xlnx_auto_0_xdb $(COMPONENT)_vhdl.prj xst *~")
+make_file_handle.write("\n\nall: clean\n\txst -ifn $(XST_PRJ) -ofn $(XST_SRP)\n\nclean: \n\trm -rf $(COMPONENT).lso $(COMPONENT).ngc $(COMPONENT).ngc_xst.xrpt $(PROJECT).ngr $(XST_SRP) xlnx_auto_0.ise xlnx_auto_0_xdb $(COMPONENT)_vhdl.prj xst *~")
 make_file_handle.close()
 os.system("chmod 755 " + xst_path + "Makefile")
 

@@ -25,7 +25,7 @@ else:
     sys.exit(0)
 
 # Run timing check file
-os.system("trce -v -o timing.twr system.ncd system.pcf")
+os.system("trce -v -o timing.twr system.ncd system.pcf -tsi timing.tsi")
 
 # Read the TWR file
 twr_file_handle = open("timing.twr", "r")
